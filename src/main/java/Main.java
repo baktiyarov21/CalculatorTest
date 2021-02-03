@@ -1,17 +1,19 @@
-import java.util.LinkedList;
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
+        Set<String> set = new TreeSet();
+        set.add("text1");
+        set.add("text2");
+        set.add("text");
 
-        for (int i = 0; i < 100; i++) {
-            linkedList.add(i);
-        }
-        for (int i = 0; i < 100; i++) {
-            linkedList.add(i);
-        }
-        for (int i = 0; i < 100; i++) {
-            linkedList.add(i);
+        for (String s : set) {
+            System.out.println(s);
         }
     }
 }
+
