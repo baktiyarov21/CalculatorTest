@@ -6,6 +6,18 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        Map<Integer,String> map = new HashMap<>();
+        map.put(15,"15");
+        map.put(16,"16");
+        map.put(19,"19");
+        map.put(16,"16-2");
+
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            System.out.println(entry);
+        }
+
+    }
+    public static void collections() {
         Map<Integer, String> map = new HashMap<>();
         map.put(1, "text1");
         map.put(2, "text1");
@@ -30,8 +42,6 @@ public class Main {
         while (integerIterator.hasNext()) {
             System.out.println(integerIterator.next());
         }
-
-
     }
 }
 
