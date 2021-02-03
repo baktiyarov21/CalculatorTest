@@ -6,14 +6,32 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Set<String> set = new TreeSet();
-        set.add("text1");
-        set.add("text2");
-        set.add("text");
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "text1");
+        map.put(2, "text1");
+        map.put(3, "text1");
+        map.put(null, "text1");
 
-        for (String s : set) {
-            System.out.println(s);
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            System.out.println(entry.getKey());
         }
+
+        Iterator<Map.Entry<Integer, String>> entryIterator = map.entrySet().iterator();
+        while (entryIterator.hasNext()) {
+            Map.Entry<Integer,String> entry = entryIterator.next();
+            System.out.println(entry);
+        }
+
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        arrayList.add(1);
+        arrayList.add(2);
+
+        Iterator<Integer> integerIterator = arrayList.iterator();
+        while (integerIterator.hasNext()) {
+            System.out.println(integerIterator.next());
+        }
+
+
     }
 }
 
