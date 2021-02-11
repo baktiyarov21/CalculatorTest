@@ -3,15 +3,11 @@ public class Counter {
     private Object object = new Object();
 
     public void inc() {
-        synchronized (object) {
-            value++;
-        }
+        value++;
     }
 
     public void dec() {
-        synchronized (object) {
-            value--;
-        }
+        value--;
     }
 
     public int getValue() {
