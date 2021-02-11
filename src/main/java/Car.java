@@ -1,11 +1,11 @@
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Car implements Serializable {
+public class Car implements Serializable, Comparable<Car> {
+
     private static final long serialVersionUID = -1549752235000541590L;
     private String brand;
-    private transient int number;
-
+    private int number;
 
     public Car(String brand, int number) {
         this.brand = brand;
@@ -20,22 +20,22 @@ public class Car implements Serializable {
         return number;
     }
 
+    public void name() {
+        System.out.println("Бренд: " + getBrand());
+    }
+
     @Override
     public String toString() {
-        return number + " " + brand;
+        return getNumber() + getBrand();
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Car car = (Car) o;
-        return number == car.number &&
-                Objects.equals(brand, car.brand);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(brand, number);
+    public int compareTo(Car t) {
+        if (this.number == t.number)
+            return 0;
+        if (this.number < t.number)
+            return -1;
+        else
+            return 1;
     }
 }
